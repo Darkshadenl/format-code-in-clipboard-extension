@@ -1,7 +1,5 @@
 regex_match_threshold: 2
-Output similarity: 0.00%
-Warning: Output similarity is below 90% threshold
-
+Output similarity: 100.00%
 --- Tekst met expliciete codeblok delimiters ---
 Dit is een tekstuele introductie.
 ```csharp
