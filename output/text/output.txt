@@ -1,0 +1,71 @@
+regex_match_threshold: 2
+Output similarity: 100.00%
+--- Tekst met expliciete codeblok delimiters ---
+Dit is een tekstuele introductie.
+```csharp
+public class HelloWorld {
+    static void Main() {
+        Console.WriteLine("Hello World");
+    }
+}
+```
+Hieronder volgt de uitleg na het codeblok.
+========================================
+--- Exclusief code zonder delimiters ---
+```csharp
+public class MyClass {
+    public void MyMethod() {
+        // code snippet
+        Console.WriteLine("Test");
+    }
+}
+```
+========================================
+--- Menging van tekst en code in dezelfde zin ---
+Hier is een voorbeeld waar een codefragment: ```csharp
+public void Execute() { doSomething(); }```
+direct in de zin zit, waarna de tekst verdergaat en nog meer uitleg geeft.
+========================================
+--- Code met onderbroken tekst en geen afsluitende delimiter ---
+Text voorafgaand aan code.
+```csharp
+public void ExampleFunction() {
+    // Enkele instructies
+    if (true) {
+        Console.WriteLine("Dit is echte code.");
+    }
+    // er ontbreekt een afsluitende structuur
+```
+Text na de code fragment.
+========================================
+--- Meerdere code secties door elkaar gemengd met tekst ---
+Start van tekst.
+```csharp
+public class Start {
+    public void Run() {
+        // eerste codeblok
+        Execute();
+    }
+}
+```
+Hier wat tussentijdse tekst.
+```csharp
+namespace Eind {
+    public class EndClass {
+        public static void End() {
+            // tweede codeblok
+        }
+    }
+}
+```
+Opnieuw tekst na de code segmenten.
+========================================
+--- Enkel tekst zonder code ---
+Dit is een volledige tekstuele input zonder code. Alleen uitleg en beschrijvingen worden hier gegeven zonder programmeringsfragmenten.
+========================================
+--- Code in een regel ingesloten in tekst ---
+Tijdens de uitleg zie je de code ```csharp
+public int Add(int a, int b) { return a + b; }
+```
+die meteen gevolgd wordt door extra uitleg.
+========================================

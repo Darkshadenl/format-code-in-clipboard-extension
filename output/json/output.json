@@ -1,0 +1,32 @@
+{
+  "outputs": [
+    {
+      "description": "Tekst met expliciete codeblok delimiters",
+      "output": "Dit is een tekstuele introductie.\n```csharp\npublic class HelloWorld {\n    static void Main() {\n        Console.WriteLine(\"Hello World\");\n    }\n}\n```\nHieronder volgt de uitleg na het codeblok."
+    },
+    {
+      "description": "Exclusief code zonder delimiters",
+      "output": "```csharp\npublic class MyClass {\n    public void MyMethod() {\n        // code snippet\n        Console.WriteLine(\"Test\");\n    }\n}\n```"
+    },
+    {
+      "description": "Menging van tekst en code in dezelfde zin",
+      "output": "Hier is een voorbeeld waar een codefragment: ```csharp\npublic void Execute() { doSomething(); }```\ndirect in de zin zit, waarna de tekst verdergaat en nog meer uitleg geeft."
+    },
+    {
+      "description": "Code met onderbroken tekst en geen afsluitende delimiter",
+      "output": "Text voorafgaand aan code.\n```csharp\npublic void ExampleFunction() {\n    // Enkele instructies\n    if (true) {\n        Console.WriteLine(\"Dit is echte code.\");\n    }\n    // er ontbreekt een afsluitende structuur\n```\nText na de code fragment."
+    },
+    {
+      "description": "Meerdere code secties door elkaar gemengd met tekst",
+      "output": "Start van tekst.\n```csharp\npublic class Start {\n    public void Run() {\n        // eerste codeblok\n        Execute();\n    }\n}\n```\nHier wat tussentijdse tekst.\n```csharp\nnamespace Eind {\n    public class EndClass {\n        public static void End() {\n            // tweede codeblok\n        }\n    }\n}\n```\nOpnieuw tekst na de code segmenten."
+    },
+    {
+      "description": "Enkel tekst zonder code",
+      "output": "Dit is een volledige tekstuele input zonder code. Alleen uitleg en beschrijvingen worden hier gegeven zonder programmeringsfragmenten."
+    },
+    {
+      "description": "Code in een regel ingesloten in tekst",
+      "output": "Tijdens de uitleg zie je de code ```csharp\npublic int Add(int a, int b) { return a + b; }\n```\ndie meteen gevolgd wordt door extra uitleg."
+    }
+  ]
+}

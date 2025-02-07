@@ -1,0 +1,39 @@
+{
+    "inputs": [
+        {
+            "description": "Tekst met expliciete codeblok delimiters",
+            "input": "Dit is een tekstuele introductie.\n```csharp\npublic class HelloWorld {\n    static void Main() {\n        Console.WriteLine(\"Hello World\");\n    }\n}\n```\nHieronder volgt de uitleg na het codeblok.",
+            "expected_output": "Dit is een tekstuele introductie.\n```csharp\npublic class HelloWorld {\n    static void Main() {\n        Console.WriteLine(\"Hello World\");\n    }\n}\n```\nHieronder volgt de uitleg na het codeblok."
+        },
+        {
+            "description": "Exclusief code zonder delimiters",
+            "input": "public class MyClass {\n    public void MyMethod() {\n        // code snippet\n        Console.WriteLine(\"Test\");\n    }\n}\n",
+            "expected_output": "```csharp\npublic class MyClass {\n    public void MyMethod() {\n        // code snippet\n        Console.WriteLine(\"Test\");\n    }\n}\n```"
+        },
+        {
+            "description": "Menging van tekst en code in dezelfde zin",
+            "input": "Hier is een voorbeeld waar een codefragment: public void Execute() { doSomething(); } direct in de zin zit, waarna de tekst verdergaat en nog meer uitleg geeft.",
+            "expected_output": "Hier is een voorbeeld waar een codefragment: ```csharp public void Execute() { doSomething(); }``` direct in de zin zit, waarna de tekst verdergaat en nog meer uitleg geeft."
+        },
+        {
+            "description": "Code met onderbroken tekst en geen afsluitende delimiter",
+            "input": "Text voorafgaand aan code.\npublic void ExampleFunction() {\n    // Enkele instructies\n    if (true) {\n        Console.WriteLine(\"Dit is echte code.\");\n    }\n    // er ontbreekt een afsluitende structuur\nText na de code fragment.",
+            "expected_output": "Text voorafgaand aan code.\n```csharp\npublic void ExampleFunction() {\n    // Enkele instructies\n    if (true) {\n        Console.WriteLine(\"Dit is echte code.\");\n    }\n    // er ontbreekt een afsluitende structuur\n```\nText na de code fragment."
+        },
+        {
+            "description": "Meerdere code secties door elkaar gemengd met tekst",
+            "input": "Start van tekst.\npublic class Start {\n    public void Run() {\n        // eerste codeblok\n        Execute();\n    }\n}\nHier wat tussentijdse tekst.\nnamespace Eind {\n    public class EndClass {\n        public static void End() {\n            // tweede codeblok\n        }\n    }\n}\nOpnieuw tekst na de code segmenten.",
+            "expected_output": "Start van tekst.\n```csharp\npublic class Start {\n    public void Run() {\n        // eerste codeblok\n        Execute();\n    }\n}\n```\nHier wat tussentijdse tekst.\n```csharp\nnamespace Eind {\n    public class EndClass {\n        public static void End() {\n            // tweede codeblok\n        }\n    }\n}\n```\nOpnieuw tekst na de code segmenten."
+        },
+        {
+            "description": "Enkel tekst zonder code",
+            "input": "Dit is een volledige tekstuele input zonder code. Alleen uitleg en beschrijvingen worden hier gegeven zonder programmeringsfragmenten.",
+            "expected_output": "Dit is een volledige tekstuele input zonder code. Alleen uitleg en beschrijvingen worden hier gegeven zonder programmeringsfragmenten."
+        },
+        {
+            "description": "Code in een regel ingesloten in tekst",
+            "input": "Tijdens de uitleg zie je de code public int Add(int a, int b) { return a + b; } die meteen gevolgd wordt door extra uitleg.",
+            "expected_output": "Tijdens de uitleg zie je de code ```csharp public int Add(int a, int b) { return a + b; }``` die meteen gevolgd wordt door extra uitleg."
+        }
+    ]
+}
