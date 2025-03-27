@@ -8,10 +8,25 @@
             "name": "Python Debugger: File",
             "type": "debugpy",
             "request": "launch",
-            "program": "./klembord_detect_csharp.py",
+            "program": "${file}",
             "console": "integratedTerminal",
-            "python": "${workspaceFolder}/python_experiment/venv/bin/python",
-            "cwd": "${workspaceFolder}/python_experiment"
+            "python": "${workspaceFolder}/venv/bin/python",
+            "cwd": "${fileDirname}",
+            "env": {
+                "PYTHONPATH": "${fileDirname}"
+            }
+        },
+        {
+            "name": "Crawl Wikipedia",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/crawl4ai/asWebserver/crawl_wikipedia.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${fileDirname}",
+            "env": {
+                "PYTHONPATH": "${fileDirname}"
+            }
         }
     ]
 }
